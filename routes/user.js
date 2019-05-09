@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 //middlewares
 const isAdmin = require('../middlewares/isAdmin');
 const verifyToken = require('../middlewares/verifyToken');
-console.log(verifyToken)
+
 
 router.use(express.json());
 router.use(cors());
@@ -23,7 +23,7 @@ router.post('/users', [verifyToken, isAdmin], (req, res) => {
 });
 
 router.get('/users', [verifyToken, isAdmin], (req, res) => {
-   let sql = "SELECT * FROM users WHERE role = ?";
+   let sql = "SELECT * FROM users";
    pool.query(sql, ['user'], (err, results) => {
       if (err) return res.json(err);
       res.json(results);
