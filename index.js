@@ -7,14 +7,14 @@ const fs = require('fs');
 const { c, cpp, node, python, java } = require('compile-run');
 const app = express();
 
-// fs.readFile("codes/upload_62f1f8dca3931844ab368ac1f9899d32.txt", 'utf8', (err, data) => {
-//     if (err) throw err;
+// fs.readFile("./Try.java", 'utf8', (err, data) => {
+//    if (err) throw err;
 
-//     java.runSource(data, { stdin: '12\nqwe' })
-//         .then((response) => {
-//             console.log(response)
-//         })
-//         .catch((err) => console.log(err));
+//    java.runSource(data, { stdin: '12\n10\n10' })
+//       .then((response) => {
+//          console.log(response)
+//       })
+//       .catch((err) => console.log(err));
 // })
 // ./Try.java
 
@@ -62,6 +62,10 @@ app.use(test_cases);
 //Students  Questions With Cases
 const std_qts_cases = require('./routes/std-qts-cases');
 app.use(std_qts_cases);
+
+//Student Exam
+const studentExam = require('./routes/student-exam');
+app.use(studentExam)
 
 
 

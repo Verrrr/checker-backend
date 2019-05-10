@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Try {
    public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
-      int total = 100;
+      int total = 0;
 
       while (true) {
          try {
-            total -= scanner.nextInt();
+            total += scanner.nextInt();
          } catch (Exception e) {
             break;
          }
