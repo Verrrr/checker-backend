@@ -84,7 +84,6 @@ router.patch('/student-exam/submit/:std_id', (req, res) => {
 
          function callback(updates) {
             console.log(req.params.std_id)
-            console.log("tapos na")
             let query = connection.query(updates, (err, results) => {
                if (err) {
                   connection.release();
@@ -92,6 +91,7 @@ router.patch('/student-exam/submit/:std_id', (req, res) => {
                }
 
                connection.release();
+               console.log("tapos na")
                res.json(results).end();
 
             })

@@ -65,7 +65,10 @@ app.use(std_qts_cases);
 
 //Student Exam
 const studentExam = require('./routes/student-exam');
-app.use(studentExam)
+app.use(studentExam);
+//Leaderboard
+const leaderboard = require('./routes/leaderboard');
+app.use(leaderboard);
 
 
 

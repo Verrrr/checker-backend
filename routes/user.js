@@ -11,7 +11,9 @@ const verifyToken = require('../middlewares/verifyToken');
 
 router.use(express.json());
 router.use(cors());
-
+router.get('/try', (req, res) => {
+   res.json({ "message": "try" });
+});
 
 router.post('/users', [verifyToken, isAdmin], (req, res) => {
    let sql = "INSERT INTO users SET ?";
